@@ -1,29 +1,9 @@
 apply plugin: 'com.android.library'
 
 ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'awesomelib'   // Has to be same as your library module name
-
-    publishedGroupId = 'com.github.nisrulz'
-    libraryName = 'AwesomeLib'
-    artifact = 'awesomelib'     // Has to be same as your library module name
-
-    libraryDescription = 'Android Library to make any text into Toast with Awesome prepended to the text'
-
-    // Your github repo link
-    siteUrl = 'https://github.com/nisrulz/UploadToBintray'
-    gitUrl = 'https://github.com/nisrulz/UploadToBintray.git'
-    githubRepository= 'nisrulz/UploadToBintray'
-
-    libraryVersion = '1.0'
-
-    developerId = 'nisrulz'
-    developerName = 'Nishant Srivastava'
-    developerEmail = 'nisrulz@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+    PUBLISH_GROUP_ID = 'com.jipengfei.android'
+    PUBLISH_ARTIFACT_ID = 'async'
+    PUBLISH_VERSION = '1.0.0'
 }
 
 android {
@@ -56,5 +36,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/bintrayv1.gradle'
+apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
