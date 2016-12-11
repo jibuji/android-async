@@ -18,7 +18,7 @@ Async.create().on(Async.io()).next(new Func0<Float>() {
     Response response = client.newCall(request).execute();
     return response.body().string();
 
-}).result(new Result<String>() {
+}).on(Async.mainThread()).result(new Result<String>() {
     // this block is running on main thread,
     // so you can do some UI stuff.
     @Override
