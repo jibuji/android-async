@@ -1,14 +1,12 @@
 package com.jipengfei.android.async;
 
 
-import android.util.Log;
 
 /**
  * Created by jibuji on 15/10/9.
  */
 public class Async<T> {
 
-    private static final String TAG = "Async";
     private static final Follower EmptyFollower = new Follower() {
         @Override
         public void onNext(Object o) {
