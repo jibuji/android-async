@@ -54,5 +54,27 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, "last return " + s);
             }
         }).fire();
+
+        Async2.create(new Func<Void, Float>() {
+            @Override
+            public Float run(Void v) throws Throwable {
+                return 1.0f;
+            }
+        }).onThreadPool(new Func<Float, Integer>(){
+            @Override
+            public Integer run(Float f) throws Throwable {
+                return f.intValue();
+            }
+        }).on(Async2.mainThread()).result(new Result<Integer>() {
+            @Override
+            public void onResult(Integer i) {
+                Log.e(TAG, "result on mainthread:"+i);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+        });
     }
 }
